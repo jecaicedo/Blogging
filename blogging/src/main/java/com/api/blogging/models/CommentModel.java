@@ -1,9 +1,18 @@
 package com.api.blogging.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Comment")
 public class CommentModel {
 
@@ -30,6 +39,4 @@ public class CommentModel {
     @JoinColumn(name = "post_id")
     private PostModel post;
 
-    // Getters y Setters
-    // ...
 }

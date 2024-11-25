@@ -1,8 +1,16 @@
 package com.api.blogging.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "CommentStatus")
 public class CommentStatusModel {
 
@@ -13,20 +21,4 @@ public class CommentStatusModel {
     @Column(nullable = false, unique = true)
     private String statusName;
 
-    // Getters y Setters
-    public int getStatusId() {
-        return statusId;
-    }
-
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
-    }
-
-    public String getStatusName() {
-        return statusName;
-    }
-
-    public void setStatusName(String statusName) {
-        this.statusName = statusName;
-    }
 }

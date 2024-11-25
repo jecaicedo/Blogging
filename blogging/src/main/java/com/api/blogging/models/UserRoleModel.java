@@ -1,8 +1,16 @@
 package com.api.blogging.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "UserRole")
 public class UserRoleModel {
 
@@ -12,21 +20,4 @@ public class UserRoleModel {
 
     @Column(nullable = false, unique = true)
     private String roleName;
-
-    // Getters y Setters
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
 }

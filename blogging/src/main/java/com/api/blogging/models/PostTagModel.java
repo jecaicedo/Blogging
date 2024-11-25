@@ -1,8 +1,16 @@
 package com.api.blogging.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "PostTag")
 @IdClass(PostTagId.class)
 public class PostTagModel {
@@ -22,29 +30,4 @@ public class PostTagModel {
     @ManyToOne
     @JoinColumn(name = "tag_id", insertable = false, updatable = false)
     private TagModel tag;
-
-    // Getters y Setters
-    public int getPostId() {
-        return postId;
-    }
-
-    public void setPostId(int postId) {
-        this.postId = postId;
-    }
-
-    public int getTagId() {
-        return tagId;
-    }
-
-    public void setTagId(int tagId) {
-        this.tagId = tagId;
-    }
-
-    public PostModel getPost() {
-        return post;
-    }
-
-    public void setPost(PostModel post) {
-        this.post = post;
-    }
 }

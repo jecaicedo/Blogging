@@ -1,8 +1,16 @@
 package com.api.blogging.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "LikeDislike")
 public class LikeDislikeModel {
 
@@ -22,36 +30,4 @@ public class LikeDislikeModel {
     @JoinColumn(name = "post_id", nullable = false)
     private PostModel post;
 
-    // Getters y Setters
-    public int getLikeDislikeId() {
-        return likeDislikeId;
-    }
-
-    public void setLikeDislikeId(int likeDislikeId) {
-        this.likeDislikeId = likeDislikeId;
-    }
-
-    public LikeDislikeTypeModel getType() {
-        return type;
-    }
-
-    public void setType(LikeDislikeTypeModel type) {
-        this.type = type;
-    }
-
-    public UserModel getUser() {
-        return user;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
-    }
-
-    public PostModel getPost() {
-        return post;
-    }
-
-    public void setPost(PostModel post) {
-        this.post = post;
-    }
 }
